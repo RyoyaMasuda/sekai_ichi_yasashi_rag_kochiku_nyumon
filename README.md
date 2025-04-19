@@ -1,0 +1,2 @@
+# sekai_ichi_yasashi_rag_kochiku_nyumon
+世界一やさしいRAG構築入門のソースコード
