@@ -61,7 +61,9 @@ def search(history):
     vector_query = VectorizedQuery(
         vector=response.data[0].embedding,
         k_nearest_neighbors=3,
-        fields="contentVector"
+        # fields="contentVector"
+        # contextと間違えたので書き換える。
+        fields="contextVector"
     )
 
     # ベクトル化された質問を用いて、Azure AI Searchに対してベクトル検索を行う。

@@ -49,7 +49,9 @@ def index_docs(chunks: list):
         )
 
         # チャンクのテキストと、そのチャンクをベクトル化したものをAzure AI Searchに登録する。
-        document = {"id": str(i), "content": chunk, "contentVector": response.data[0].embedding}
+        # 間違えてcontextVectorにしてしまったので書き換える。
+        # document = {"id": str(i), "content": chunk, "contentVector": response.data[0].embedding}
+        document = {"id": str(i), "content": chunk, "contextVector": response.data[0].embedding}
         searchClient.upload_documents([document])
 
 # テキストを指定したサイズで分割する関数を定義する。
